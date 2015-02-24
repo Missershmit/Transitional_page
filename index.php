@@ -1,22 +1,11 @@
-<<<<<<< .mine
-
-
-<form method="GET" action="http://transitional-page.local/">
-    Введіть Ваше ім'я: <input type="text" name="name">
+<form method="GET" action="http://transitional-page.local/transitional_page.php">
+    Р’РІРµРґРёС‚Рµ РёРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ: <input type="text" name="name">
     <br>
-=======
-<<<<<<< HEAD
 
-
-
-
->>>>>>> .theirs
-<<<<<<< .mine
     <input type="submit" name="okbutton" value="OK">
 </form>
 
-=======
 <?php
 echo 'Transitional Page';
 ?>
->>>>>>> .theirs
+
