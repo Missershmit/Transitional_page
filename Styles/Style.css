@@ -142,3 +142,30 @@ header, section, footer, aside, nav, article, figure {
     display: block;
 
 }
+.tabstyle1 {
+    border: 5px ridge #73766f;
+    border-collapse: collapse;
+}
+
+.tabstyle1 thead, th {
+    background: -webkit-linear-gradient(top right, #b8b9b1, #fff); /* для webkit-браузеров */
+    background: -moz-linear-gradient(top right, #b8b9b1, #fff); /* для firefox 3.6+ */
+    background: -o-linear-gradient(top right, #b8b9b1, #fff); /* для Opera 11.10+ */
+    background: -ms-linear-gradient(top right, #b8b9b1, #fff); /* для IE10+ */
+    text-align: center;
+    vertical-align: text-top;
+    padding:10px;
+    border-bottom: 3px ridge #73766f;
+    border-left: 1px solid #73766f;
+    border-collapse: collapse;
+}
+
+.tabstyle1 td, tr {
+    text-align:left;
+    vertical-align: text-top;
+    padding:10px;
+    border: 1px solid #73766f;
+    border-collapse: collapse;
+    background: #fff;
+}
+

@@ -1,54 +1,55 @@
-<!--    <html>
-<body>
-/*
-//
-/*$name = isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '';
-$year_born = isset($_POST['year_born']) ? htmlspecialchars($_POST['year_born']) : '';
-$year_1 = isset($_POST['year_1']) ? htmlspecialchars($_POST['year_1']) : '';
+<link href="Styles/style.css" rel="stylesheet" type="text/css">
+<?php
+require_once('functions.php');
+if ($_POST) {
+    list($author, $price, $quantity, $image_file) = validate();
+    setAuthor($author, $price, $quantity, $image_file);
+    upload_file();
+}
 ?>
 
-
-<form method="post" action="transitional_page.php">
-
-    Введите Ваше имя: <input type="text" name="name" value="<?=$name?>">
-    <br>
-    Введите Ваш год рождения: <input type="text" name="year_born" value="<?=$year_born?>">
-    Введите желаемый год : <input type="text" name="year_1" value="<?=$year_1?>">
-    <input type="submit" value="">
-</form>
-</body>
-</html>
--->
-<!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Тест на цсс</title>
-    <link href="Styles/style.css" rel="stylesheet" type="text/css">
-    </head>
+    <title>HTML-форма добавления новых книг</title>
+</head>
 <body>
-<div
-    class="container">
+<form action="" method='POST' enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>Автор
+            <td><input name='author' value="<?= $author ?>" maxlength='30' size='30'>
+        </tr>
+        <tr>
+            <td>Цена
+            <td><input name='price' value="<?= $price ?>" maxlength='7' size='7'>
+        </tr>
+        <tr>
+            <td>Количество
+            <td><input name='quantity' value="<?= $quantity ?>" maxlength='3' size='3'>
+        </tr>
+        <tr>
+            <td>Картинка
+            <td><input name='image' type='file'>
+        </tr>
+        <tr>
+            <td><input type='submit' value="Ввод"/>
+        </tr>
+    </table>
+</form>
+
+<table class = "tabstyle1">
+
     <?php
-
-        include ('thema/header.php');
-        include ('thema/right_td.php');
-        include ('thema/left_td.php');
-        include ('thema/footer.php');
-
+    foreach (getAuthor() as $author) {
+        echo '<tr>';
+        echo '<td>' . $author->id . '</td>' . '<td>' . $author->author . '</td>' . '<td>' . $author->price . '</td>' . '<td>' . $author->quantity . '</td>' . '<td>' . $author->image . '</td>';
+        echo '</tr>';
+    }
     ?>
-    <article
-        class="content">
-        <h1>Центральная часть</h1>
+</table>
 
-    </article>
-</div>
+
 </body>
 </html>
-
-
-
-
-
 
 
