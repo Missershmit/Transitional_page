@@ -2,8 +2,8 @@
 <?php
 require_once('functions.php');
 if ($_POST) {
-    list($author, $price, $quantity, $image_file) = validate();
-    setAuthor($author, $price, $quantity, $image_file);
+    list($author, $price, $quantity, $image_file,$date_add) = validate();
+    setAuthor($author, $price, $quantity, $image_file,$date_add);
     upload_file();
 }
 ?>
@@ -42,7 +42,7 @@ if ($_POST) {
     <?php
     foreach (getAuthor() as $author) {
         echo '<tr>';
-        echo '<td>' . $author->id . '</td>' . '<td>' . $author->author . '</td>' . '<td>' . $author->price . '</td>' . '<td>' . $author->quantity . '</td>' . '<td>' . $author->image . '</td>';
+        echo '<td>' . $author->id . '</td>' . '<td>' . $author->author . '</td>' . '<td>' . $author->price . '</td>' . '<td>' . $author->quantity . '</td>' . '<td>' . $author->image . '</td>'. '<td>' . $author->date_add . '</td>';
         echo '</tr>';
     }
     ?>
